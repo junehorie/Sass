@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+@use "variables";
+
+// header
+.header {
+    &Box {
+        @include variables.flexContainer;
+        justify-content: space-between;
+        height: 75px;
+    }
+
+    &Logo {
+        height: 100%;
+    }
+
+    &Link {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &Img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// hamburger menu
+.hamburger {
+    position: relative;
+    z-index: 100;
+    width: 35px;
+    height: 35px;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &Line {
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transition: all 0.4s;
+
+        &:first-child {
+            top: 5px;
+
+            &.is-active {
+                top: 15px;
+                transform: rotate(45deg);
+            }
+        }
+
+        &:nth-child(2) {
+            top: 15px;
+
+            &.is-active {
+                opacity: 0;
+            }
+        }
+
+        &:last-child {
+            top: 25px;
+
+            &.is-active {
+                top: 15px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+// menu panel
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+
+    &.is-active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    &Wrapper {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &Box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &List:hover {
+        opacity: .9;
+    }
+}

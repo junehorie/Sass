@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@use "variables";
+
+// footer
+.footer {
+  margin-top: variables.$mtBig;
+
+  &Items {
+
+    padding-top: 8px;
+    padding-bottom: 24px;
+  }
+
+  &Sns {
+    @include variables.flexContainer;
+    gap: 32px;
+
+    @include variables.tablet {
+      gap: 24px;
+    }
+  }
+
+  &Copy {
+    margin-top: 16px;
+    text-align: center;
+  }
+}
+
+.fa-brands {
+  font-size: 30px;
+
+  @include variables.tablet {
+    font-size: 24px;
+  }
+}

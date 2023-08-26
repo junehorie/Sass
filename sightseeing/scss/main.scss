@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+@use "header";
+@use "footer";
+@use "variables";
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #000;
+    color: #fff;
+    cursor: default;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: .7;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wrapper {
+    max-width: 1300px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+// mainvisuak
+.mainvisual {
+    width: 100%;
+    height: calc(100vh - 75px);
+
+    &Img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @include variables.mobile {
+            object-position: top 50% left 30%;
+        }
+    }
+}
+
+// about
+.about {
+    margin-top: variables.$mtBig;
+
+    @include variables.mobile {
+        margin-top: variables.$mtMiddle;
+    }
+
+    &Title {
+        font-size: variables.$fsBig;
+        text-align: center;
+        line-height: 1;
+
+        @include variables.mobile {
+            font-size: variables.$fsMiddle;
+        }
+    }
+
+    &Intro {
+        width: 80%;
+        margin-top: variables.$mtMiddle;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 16px 16px;
+        text-align: center;
+
+        @include variables.tablet {
+            width: 90%;
+        }
+
+        @include variables.mobile {
+            width: 100%;
+            margin-top: variables.$mtSmall;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    &Box {
+        margin-top: variables.$mtBig;
+    }
+
+    // aboutFood&History
+    &Food,
+    &History {
+        @include variables.flexContainer;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        @include variables.tablet {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+
+    &Des,
+    &Photo {
+        width: calc(100% /2);
+        height: auto;
+
+        @include variables.tablet {
+            width: 90%;
+        }
+
+        @include variables.mobile {
+            width: 100%;
+        }
+    }
+
+    &Des {
+        padding: 0 32px;
+
+        @include variables.tablet {
+            padding: 16px 32px;
+        }
+
+        @include variables.mobile {
+            padding: 16px 0;
+        }
+    }
+
+    &Photo>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &Subtitle {
+        display: inline-block;
+        position: relative;
+        font-size: variables.$fsMiddle;
+
+        &::after {
+            @include variables.afterBorder;
+        }
+
+        @include variables.tablet {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &Text {
+        margin-top: variables.$mtMiddle;
+        line-height: 1.7;
+
+        @include variables.tablet {
+            margin-top: variables.$mtSmall;
+        }
+    }
+
+    // aboutNature
+    &Nature {
+        @include variables.flexContainer;
+        align-items: center;
+
+        @include variables.tablet {
+            align-items: center;
+            flex-direction: column-reverse;
+            margin-top: variables.$mtBig;
+        }
+    }
+
+    // aboutHistory
+    &History {
+        @include variables.tablet {
+            margin-top: variables.$mtBig;
+        }
+    }
+}
