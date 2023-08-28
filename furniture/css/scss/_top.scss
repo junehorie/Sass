@@ -1,0 +1,67 @@
+@use "./variables";
+/* top */
+.products {
+    &Items {
+        padding-top: 20px;
+    }
+
+    &Box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 35px;
+        width: 100%;
+        font-size: variables.$fontsize-original; 
+    }
+
+    &List {
+        width: calc(100%/4 - 35px);
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: .8;
+            cursor: pointer;
+        }
+    }
+
+    &Btn {
+        margin-top: 52px;
+        margin-bottom: 42px;
+        text-align: center;
+        font-size: variables.$fontsize-big;
+    }
+
+    &More {
+        display: inline-block;
+
+        &.is-hidden {
+            display: none;
+        }
+    }
+
+    &More:hover {
+        opacity: 0.7;
+    }
+
+    &Less {
+        display: none;
+
+        &.is-shown {
+            display: inline-block;
+        }
+    }
+
+    &Less:hover {
+        opacity: 0.7;
+    }
+}
+
+#hiddenProducts {
+    display: none;
+    margin-top: 35px;
+
+    &.is-opened {
+        display: block;
+    }
+}

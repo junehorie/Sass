@@ -1,0 +1,26 @@
+@use "variables";
+
+.products {
+    &Title {
+        font-size: variables.$fontsize-big;        
+    }
+
+    &Box {
+        margin-top: 30px;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+    padding-bottom: 112px;
+    font-size: variables.$fontsize-big;
+
+    &Current {
+        opacity: .8;
+    }
+}
+

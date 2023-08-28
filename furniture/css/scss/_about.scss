@@ -1,0 +1,43 @@
+@use "variables";
+
+.about {
+    height: calc(100vh - 73px);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.45), transparent), url(../img/about-bg.jpg);
+    background-size: cover;
+
+    &Items {
+        padding-top: 30px;
+        padding-bottom: 130px;
+    }
+
+    &Title {
+        font-size: variables.$fontsize-big;
+    }
+
+    &Text {
+        margin-top: 30px;
+        line-height: 1.6;
+    }
+
+    &Text,
+    &Tel {
+        max-width: 450px;
+        font-size: variables.$fontsize-original;
+    }
+
+    &Tel {
+        display: inline-block;
+        margin-top: 60px;
+        text-decoration: underline;
+
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+
+    &Address {
+        margin-top: 10px;
+        font-size: variables.$fontsize-original;
+    }
+}

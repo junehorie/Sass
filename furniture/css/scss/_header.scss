@@ -1,0 +1,108 @@
+/* header */
+.header {
+    &Items {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    &Box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    &Logo {
+        width: 180px;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &Btn {
+        position: relative;
+        z-index: 101;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+        width: 30px;
+        height: 30px;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+.menuBtn-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: all .4s;
+
+    &:first-child {
+        top: 10px;
+    }
+
+    &:last-child {
+        top: 20px;
+    }
+
+    &.is-active {
+        background-color: #fff;
+    }
+
+    &:first-child.is-active {
+        top: 15px;
+        transform: rotate(45deg);
+    }
+
+    &:last-child.is-active {
+        top: 15px;
+        transform: rotate(-45deg);
+    }
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 100px;
+    background-color: rgba(0, 0, 0, .8);
+    color: #fff;
+    opacity: 0;
+    transition: opacity .4s;
+    pointer-events: none;
+
+    &Box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &List:hover {
+        opacity: 0.7;
+    }
+}
+
+.menu.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}

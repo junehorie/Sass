@@ -1,0 +1,26 @@
+@use "variables";
+
+.footer {
+    &Items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    &Copy {
+        font-size: variables.$fontsize-small;
+    }
+}
+
+.sns {
+    display: flex;
+    gap: 30px;
+    font-size: variables.$fontsize-original;
+
+    &List:hover {
+        opacity: .7;
+    }
+}
+
